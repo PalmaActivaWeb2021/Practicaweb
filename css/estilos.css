@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+:root{
+    --primarycolor:#000000;
+    --backgroundcolor:#E8F9FF;
+    --secondcolor: #C4C4C4;
+    --footercolor:#647378;
+}
+
+body{
+    background-color: var(--backgroundcolor);
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    display:grid;
+    grid-template-columns: repeat(8, auto);
+    grid-template-rows: repeat(6, auto); 
+    grid-template-areas: "header header"
+                          "flores flores"
+                          "flores_dos flores_dos"
+                          "footer footer"
+                                            ;
+}
+
+/*detalles elementos A y LI*/
+:is(a){
+    text-decoration: none;
+     color: var(--primarycolor);
+    }
+
+:is(li){
+    list-style: none;
+}
+
+/*estilos HEADER*/
+header{
+    grid-area: header;
+}
+
+.header_contain{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+header nav ul{
+    display:flex;
+    justify-content: space-between;
+    width: 30rem;
+     }
+
+header img{ width: 100%;}
+
+
+h1{text-align: center;}
+
+/* ESTILOS SECCION FLORES */
+.flores{
+    grid-area: flores;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.title_flores{
+    margin-left: 4rem;
+}
+.title_flores h2{ 
+    margin-bottom: 1rem;
+}
+.flores_dos{
+    grid-area: flores_dos;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flores_dos p{ margin-right: 4rem;}
+
+section  img { width: 46rem;}
+
+
+/* SECCION FOOTER */
+
+.footer{
+    grid-area: footer;
+    display:grid;
+    padding: 2rem 0 2rem 0;
+    margin-top: 2rem;
+    background:var(--footercolor);
+    color: var(--secondcolor);
+}
+
+.redes{
+    grid-column: 1 / 2;
+    margin-left: 1rem;
+    }
+
+.normas{
+    grid-column: 3 / 4;
+     color: var(--secondcolor);
+}
+
+.footer p{
+    grid-column: 5/ span 3;
+    padding-top: 5rem;
+}
+
+:is(footer) li {
+    margin-top: 1rem;
+    }
+    
+.footer a{ color: var(--secondcolor);}
